@@ -1,8 +1,8 @@
 # asello-client-rest-api-csharp
 
-The asello win application (https://asello.at/apps) provides a simple rest api to control the main features of asello.
+The asello win application (https://asello.at/apps) provides a simple rest api to control the main features of the asello application.
 
-## create a invoice
+## create an invoice
 
 Method: HTTP-POST
 URL: http://localhost:2323/api/create?action=print
@@ -15,6 +15,8 @@ Name|Type|Example|
 action|```String("print", "overview", "options", "preview")```|```"print"```|
 
 **Request Body**
+
+Content-Type: application/json
 
 ```javascript
 {
@@ -41,15 +43,47 @@ action|```String("print", "overview", "options", "preview")```|```"print"```|
 }
 ```
 
-**Response status codes*
+Name|Type|Example|
+---|---|---|
+items (required)|```Array<Item>```||
+items[0].name (required)|```String```|```"Position 1"```|
+items[0].description|```String```|```"Beschreibung"```|
+items[0].netprice (required)|```Number```|```20.0"```|
+items[0].vatcode (required)|```String("A", "B", "C", "D", "E")```|```A```|
+items[0].quantity (required)|```Number```|```2```|
+items[0].articlenumber|```String```|```"ART00001"```|
+customer|```Object```||
+customer.salutation|```String("Mister", "Muss", "Company")```|```"Mister"```|
+customer.name|```String```|```"Mustermann"```|
+customer.firstname|```String```|```"Max"```|
+customer.attention|```String```|```"z.H. Frau Müller"```|
+customer.street|```String```|```"Straße 12"```|
+customer.zip|```String```|```"1234"```|
+customer.city|```String```|```"Musterstadt"```|
+customer.customerid|```String```|```"KN000001"```|
+annotation|```String```|```"Meine Anmerkung"```|
+internal_note|```String```|```"Interne Notiz"```|
+discount|```Number```|```20.0```|
+
+**Note:** If an articlennumber is specified, the other properties are ignored expect for quantity.
+
+**Note:** If an customerid is specified, the other properties will be ignored. 
+
+**Note:** attention and uid are only available if salutation = 'Comany'
+
+
+
+**Response status codes**
 
 Code|Body Content|
 ---|---|
-200 - OK|conent see below|
+200 - OK|content see below|
 400 - Bad Request|error message|
 500 - Internal Server Error|error message|
 
 **Response Body**
+
+Content-Type: application/json
 
 ```javascript
 {
@@ -59,6 +93,12 @@ Code|Body Content|
 }
 ```
 
+Name|Type|Example|
+---|---|---|
+id|```Number (long)```|```1234```|
+number|```String```|```"R0000001"```|
+status|```String("created", "canceled")```|```"created"```|
+
 ##cancel invoice
 
 Method: HTTP-POST
@@ -66,6 +106,8 @@ URL: http://localhost:2323/api/cancel
 Body: data as json
 
 **Request Body**
+
+Content-Type: application/json
 
 ```javascript
 {
@@ -77,6 +119,16 @@ Body: data as json
 }
 ```
 
+Name|Type|Example|
+---|---|---|
+id (required)|```Number (long)```|```1234```|
+reason|```String```|```"Meine Begründung"```|
+internal_note|```String```|```"Meine interne Notiz"```|
+print|```Boolean```|```true```|
+printer|```String```|```Canon XXXXX```|
+
+**Note:** internal_note or reason is required
+
 **Response status codes*
 
 Code|Body Content|
@@ -94,3 +146,11 @@ Code|Body Content|
     status: ’created’
 }
 ```
+
+Name|Type|Example|
+---|---|---|
+id|```Number (long)```|```1235```|
+number|```String```|```"R00002"```|
+status|```String("created", "canceled"```|```"created```|
+
+**Note:** the result contains the number of the cancelation invoice
