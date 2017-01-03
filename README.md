@@ -2,6 +2,8 @@
 
 The asello win application (https://asello.at/apps) provides a simple rest api to control the main features of the asello application.
 
+[definition]: https://github.com/asello/asello-client-rest-api/blob/master/asello%20ClientAPI%20Rest.png?raw=true "Logo"
+
 ## create an invoice
 
 Method: HTTP-POST
