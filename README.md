@@ -73,7 +73,17 @@ discount|```Number```|```20.0```|
 
 **Note:** attention and uid are only available if salutation = 'Comany'
 
+### VAT Codes
 
+code | rate 
+--- | ---
+A | 20%
+B | 13%
+C | 12%
+D | 10%
+E | 0%
+F | 19%
+G | 7%
 
 **Response status codes**
 
