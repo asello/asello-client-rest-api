@@ -41,7 +41,9 @@ Content-Type: application/json
     },
     "annotation": "Meine Anmerkung auf dieser Rechnung",
     "internal_note": "Meine interne Notiz zu dieser Rechnung",
-    "discount": 20.0
+    "discount": 20.0,
+    "type": "Invoice",
+    "payment_type": "Cash"
 }
 ```
 
