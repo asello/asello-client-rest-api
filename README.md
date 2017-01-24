@@ -66,6 +66,8 @@ customer.customerid|```String```|```"KN000001"```|
 annotation|```String```|```"Meine Anmerkung"```|
 internal_note|```String```|```"Interne Notiz"```|
 discount|```Number```|```20.0```|
+type| ```string("Invoice", "OnAccount", "Offer", "DeliveryNote")``` | "Invoice"
+payment_type| ```string("Cash", "CreditCard", "CashCard")``` | "Cash"
 
 **Note:** If an articlennumber is specified, the other properties are ignored expect for quantity.
 
