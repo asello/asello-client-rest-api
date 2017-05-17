@@ -32,7 +32,7 @@ Code|Body Content|
 Content-Type: application/json
 Content-Description: https://github.com/asello/asello-client-api/wiki/invoice-object-definition
 
-#cancel
+# Cancel
 
 Method: HTTP-POST
 URL: http://localhost:2323/api/cancel
