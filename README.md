@@ -55,3 +55,7 @@ Code|Body Content|
 
 Content-Type: application/json
 Content-Description: https://github.com/asello/asello-client-api/wiki/cancel-object-definition
+
+# Need Help?
+
+Get in touch with the asello team (support@asello.at).
