@@ -17,7 +17,8 @@ action|```String("print", "overview", "options", "preview")```|```"print"```|
 **Request Body**
 
 Content-Type: application/json
-Content-Description: https://github.com/asello/asello-client-api/wiki/create-invoice-object-definition
+
+Content-Description: [Create Object Definition](https://github.com/asello/asello-client-api/wiki/create-invoice-object-definition)
 
 **Response status codes**
 
@@ -30,7 +31,8 @@ Code|Body Content|
 **Response Body**
 
 Content-Type: application/json
-Content-Description: https://github.com/asello/asello-client-api/wiki/invoice-object-definition
+
+Content-Description: [Create Object Definition](https://github.com/asello/asello-client-api/wiki/invoice-object-definition)
 
 # Cancel
 
@@ -41,7 +43,8 @@ Body: data as json
 **Request Body**
 
 Content-Type: application/json
-Content-Description: https://github.com/asello/asello-client-api/wiki/cancel-object-definition
+
+Content-Description: [Cancel Object Definition](https://github.com/asello/asello-client-api/wiki/cancel-object-definition)
 
 **Response status codes*
 
@@ -54,7 +57,8 @@ Code|Body Content|
 **Response Body**
 
 Content-Type: application/json
-Content-Description: https://github.com/asello/asello-client-api/wiki/cancel-object-definition
+
+Content-Description: [Cancel Object Definition](https://github.com/asello/asello-client-api/wiki/cancel-object-definition)
 
 # Need Help?
 
